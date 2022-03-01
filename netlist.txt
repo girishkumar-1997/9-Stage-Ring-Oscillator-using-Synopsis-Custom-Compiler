@@ -1,0 +1,81 @@
+*  Generated for: PrimeSim
+*  Design library name: ringoscillator
+*  Design cell name: ring_osc_tb
+*  Design view name: schematic
+.lib 'saed32nm.lib' TT
+
+*Custom Compiler Version S-2021.09
+*Tue Mar  1 10:13:06 2022
+
+.global gnd!
+********************************************************************************
+* Library          : ringoscillator
+* Cell             : ring_osc
+* View             : schematic
+* View Search List : hspice hspiceD schematic spice veriloga
+* View Stop List   : hspice hspiceD
+********************************************************************************
+.subckt ring_osc en gnd_1 output vdd
+xm26 net70 net69 gnd! net70 p105 w=1u l=0.032u nf=1 m=1
+xm25 net69 en vdd vdd p105 w=1u l=0.032u nf=1 m=1
+xm21 net60 net61 vdd vdd p105 w=1u l=0.032u nf=1 m=1
+xm20 net59 net60 vdd vdd p105 w=1u l=0.032u nf=1 m=1
+xm19 output net59 vdd vdd p105 w=1u l=0.032u nf=1 m=1
+xm15 net54 net55 vdd vdd p105 w=1u l=0.032u nf=1 m=1
+xm14 net53 net54 vdd vdd p105 w=1u l=0.032u nf=1 m=1
+xm13 net61 net53 vdd vdd p105 w=1u l=0.032u nf=1 m=1
+xm0 net70 output vdd vdd p105 w=1u l=0.032u nf=1 m=1
+xm1 net29 net70 vdd vdd p105 w=1u l=0.032u nf=1 m=1
+xm2 net55 net29 vdd vdd p105 w=1u l=0.032u nf=1 m=1
+xm27 net70 en gnd! net70 n105 w=1u l=0.032u nf=1 m=1
+xm24 net69 en gnd_1 gnd_1 n105 w=1u l=0.032u nf=1 m=1
+xm23 output net59 gnd_1 gnd_1 n105 w=1u l=0.032u nf=1 m=1
+xm22 net59 net60 gnd_1 gnd_1 n105 w=1u l=0.032u nf=1 m=1
+xm18 net60 net61 gnd_1 gnd_1 n105 w=1u l=0.032u nf=1 m=1
+xm17 net61 net53 gnd_1 gnd_1 n105 w=1u l=0.032u nf=1 m=1
+xm16 net53 net54 gnd_1 gnd_1 n105 w=1u l=0.032u nf=1 m=1
+xm12 net54 net55 gnd_1 gnd_1 n105 w=1u l=0.032u nf=1 m=1
+xm8 net55 net29 gnd_1 gnd_1 n105 w=1u l=0.032u nf=1 m=1
+xm7 net29 net70 gnd_1 gnd_1 n105 w=1u l=0.032u nf=1 m=1
+xm6 net70 output gnd_1 gnd_1 n105 w=1u l=0.032u nf=1 m=1
+.ends ring_osc
+
+********************************************************************************
+* Library          : ringoscillator
+* Cell             : ring_osc_tb
+* View             : schematic
+* View Search List : hspice hspiceD schematic spice veriloga
+* View Stop List   : hspice hspiceD
+********************************************************************************
+v10 net28 gnd! dc=0 pulse ( 0 1 0 0.01n 0.01n 1n 0 )
+v9 net26 gnd! dc='1v'
+xi8 net28 gnd! op net26 ring_osc
+
+
+
+
+
+
+
+
+.tran '500p' '20n' name=tran
+
+.option primesim_remove_probe_prefix = 0
+.probe v(*) i(*) level=1
+.probe tran v(net28) v(op)
+
+.temp 25
+
+
+
+.option primesim_output=wdf
+
+
+.option parhier = LOCAL
+
+
+
+
+
+
+.end
