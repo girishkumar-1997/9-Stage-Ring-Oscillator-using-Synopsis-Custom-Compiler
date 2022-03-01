@@ -19,7 +19,7 @@ An Oscillator generates a signal with specific frequency and which is used for s
 
 Ring oscillator is a type of relaxation oscillator containing odd number of inverters. The output of last inverter is connected to the first inverter which is positive feedback. The number of inverter stages depends on the frequency which we want to generate. There will be a delay due to inverter and as the stages increases the oscillator frequency will be reduced. 
 
-![image](https://github.com/girishkumar-1997/9-Stage-Ring-Oscillator-using-Synopsis-Custom-Compiler/blob/master/images/Circuit.png)
+![image](https://github.com/girishkumar-1997/9-Stage-Ring-Oscillator-using-Synopsis-Custom-Compiler/blob/master/images/ckt.png)
 
 
 
