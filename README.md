@@ -1,4 +1,4 @@
-# Implementation of 9-Stage-Ring-Oscillator-using-Synopsis-Custom-Compiler
+# Implementation of 9-Stage-Ring-Oscillator-using-Synopsys-Custom-Compiler
 9-Stage Ring Oscillator is desined using 28nm CMOS Technology.
 
 # Table of Content 
